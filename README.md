@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Resume Assistant
+
+A full-stack AI-powered resume bullet improvement tool built with Next.js.
+
+Users can paste a rough resume bullet or project description, submit it, and receive a cleaner, more recruiter-friendly rewrite using an OpenAI-powered API route.
+
+## Live Demo
+
+Live demo link: _Coming soon_
+
+## Screenshot
+
+Screenshot: _Coming soon_
+
+## Features
+
+- AI-powered resume bullet rewriting
+- Clean branded UI with MU monogram
+- Responsive two-column layout
+- Textarea input for rough resume bullets or project descriptions
+- Backend API route at `/api/generate`
+- Loading state while generating output
+- Error handling for failed requests
+- Disabled submit button when input is empty or loading
+- Copy-to-clipboard button for generated output
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- OpenAI API
+- Vercel deployment
+
+## How It Works
+
+1. The user enters a rough resume bullet or project description in the textarea.
+2. The frontend sends the input to the `/api/generate` route.
+3. The API route uses the OpenAI API to generate an improved version.
+4. The improved text is returned to the frontend and displayed in the output section.
+5. The user can copy the generated result to their clipboard.
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+```
+
+Move into the project folder:
+
+```bash
+cd ai-resume-helper
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a local environment file:
+
+```bash
+touch .env.local
+```
+
+Add your OpenAI API key to `.env.local`:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the app in your browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+This project requires an OpenAI API key.
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file in the root of the project and add:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Do not commit your `.env.local` file or expose your API key publicly.
 
-## Deploy on Vercel
+## What I Learned
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+While building this project, I practiced:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Creating a full-stack feature with a frontend form and backend API route
+- Managing client-side state for input, output, loading, and errors
+- Connecting a Next.js API route to the OpenAI API
+- Building a responsive UI with Tailwind CSS
+- Designing a branded interface that feels consistent with a personal portfolio
+- Handling disabled states, loading feedback, and copy-to-clipboard behavior
+
+## Future Improvements
+
+- Add a copied confirmation message after using the copy button
+- Let users choose different rewrite styles, such as concise, technical, or leadership-focused
+- Add examples to help users understand what type of input works best
+- Save recent generations locally during a session
+- Add stronger validation for very short or unclear input
+- Include a screenshot and live demo link after deployment
+
+## Author
+
+Built by Shabil Dixon as a portfolio project to practice full-stack development, AI-assisted workflows, and polished frontend design.
