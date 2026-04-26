@@ -1,12 +1,12 @@
 # AI Resume Assistant
 
-A full-stack AI-powered resume bullet improvement tool built with Next.js.
+A full-stack AI-powered resume bullet improvement tool built with Next.js, React, TypeScript, Tailwind CSS, and the OpenAI API.
 
-Users can paste a rough resume bullet or project description, submit it, and receive a cleaner, more recruiter-friendly rewrite using an OpenAI-powered API route.
+Users can paste a rough resume bullet or project description, choose a tone, and generate a cleaner recruiter-friendly rewrite.
 
 ## Live Demo
 
-Live demo link: _Coming soon_
+Live demo: _Coming soon_
 
 ## Screenshot
 
@@ -15,14 +15,15 @@ Screenshot: _Coming soon_
 ## Features
 
 - AI-powered resume bullet rewriting
-- Clean branded UI with MU monogram
-- Responsive two-column layout
+- Tone selection for professional, technical, or concise output
 - Textarea input for rough resume bullets or project descriptions
 - Backend API route at `/api/generate`
-- Loading state while generating output
+- Loading state while the rewrite is being generated
 - Error handling for failed requests
-- Disabled submit button when input is empty or loading
-- Copy-to-clipboard button for generated output
+- Before and after comparison view
+- Copy-to-clipboard button for the generated rewrite
+- Responsive Tailwind CSS layout
+- Clean branded UI with MU monogram
 
 ## Tech Stack
 
@@ -31,15 +32,16 @@ Screenshot: _Coming soon_
 - TypeScript
 - Tailwind CSS
 - OpenAI API
-- Vercel deployment
+- Vercel
 
 ## How It Works
 
-1. The user enters a rough resume bullet or project description in the textarea.
-2. The frontend sends the input to the `/api/generate` route.
-3. The API route uses the OpenAI API to generate an improved version.
-4. The improved text is returned to the frontend and displayed in the output section.
-5. The user can copy the generated result to their clipboard.
+1. The user enters a rough resume bullet or project description.
+2. The user selects a tone: professional, technical, or concise.
+3. The frontend sends the input and tone to `/api/generate`.
+4. The API route calls the OpenAI API with a prompt based on the selected tone.
+5. The app displays the original text and improved rewrite in a before/after comparison.
+6. The user can copy the improved result to their clipboard.
 
 ## Getting Started
 
@@ -67,7 +69,7 @@ Create a local environment file:
 touch .env.local
 ```
 
-Add your OpenAI API key to `.env.local`:
+Add your OpenAI API key:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
@@ -79,7 +81,7 @@ Run the development server:
 npm run dev
 ```
 
-Open the app in your browser:
+Open the app:
 
 ```text
 http://localhost:3000
@@ -89,33 +91,47 @@ http://localhost:3000
 
 This project requires an OpenAI API key.
 
-Create a `.env.local` file in the root of the project and add:
+Create a `.env.local` file in the project root:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-Do not commit your `.env.local` file or expose your API key publicly.
+The API key should stay private and should not be committed to GitHub.
+
+For deployment, add the same `OPENAI_API_KEY` variable in your Vercel project settings.
 
 ## What I Learned
 
 While building this project, I practiced:
 
-- Creating a full-stack feature with a frontend form and backend API route
-- Managing client-side state for input, output, loading, and errors
-- Connecting a Next.js API route to the OpenAI API
-- Building a responsive UI with Tailwind CSS
-- Designing a branded interface that feels consistent with a personal portfolio
-- Handling disabled states, loading feedback, and copy-to-clipboard behavior
+- Building a full-stack feature with a client UI and backend API route
+- Managing React state for input, output, loading, errors, and selected tone
+- Sending data from a Next.js client component to an API route
+- Using the OpenAI API to generate text from a structured prompt
+- Creating tone-based prompt behavior
+- Designing a responsive interface with Tailwind CSS
+- Adding user experience details like loading feedback, error messages, comparison views, and copy-to-clipboard behavior
 
 ## Future Improvements
 
-- Add a copied confirmation message after using the copy button
-- Let users choose different rewrite styles, such as concise, technical, or leadership-focused
-- Add examples to help users understand what type of input works best
-- Save recent generations locally during a session
+- Add a copied confirmation message after the copy button is clicked
+- Add more tone options, such as leadership-focused or impact-focused
+- Add example prompts to help users get started faster
+- Save recent generations during a session
 - Add stronger validation for very short or unclear input
-- Include a screenshot and live demo link after deployment
+- Add a real screenshot after final deployment
+- Add the live demo link after deploying to Vercel
+
+## Interview Explanation
+
+AI Resume Assistant is a small full-stack project I built to practice combining a polished frontend with an AI-powered backend workflow.
+
+The frontend is built with Next.js, React, TypeScript, and Tailwind CSS. It lets users enter a rough resume bullet, choose a tone, and submit the text. The client sends the input and selected tone to a Next.js API route at `/api/generate`.
+
+On the backend, the API route validates the input, reads the tone, builds a prompt, and sends the request to the OpenAI API. The response is returned to the frontend and displayed in a before/after comparison so the user can see the original text beside the improved rewrite.
+
+I focused on keeping the app practical and easy to understand. The project includes loading feedback, error handling, disabled button states, responsive layout, and copy-to-clipboard functionality.
 
 ## Author
 
