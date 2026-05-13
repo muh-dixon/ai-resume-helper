@@ -12,13 +12,17 @@ AI Resume Assistant is an AI-powered resume writing tool for job seekers and por
 
 ## Screenshots
 
-Screenshots will be added here.
+### Homepage
 
-Suggested assets:
+![AI Resume Assistant homepage](public/readme-assets/ai-resume-homepage.png)
 
-- Homepage screenshot
-- Input and generated response screenshot
-- Short demo GIF
+### Generated Response
+
+![AI Resume Assistant generated response](public/readme-assets/ai-resume-response.png)
+
+### Demo
+
+![AI Resume Assistant demo](public/readme-assets/ai-resume-demo.gif)
 
 ## Features
 
@@ -114,7 +118,6 @@ http://localhost:3000
 
 ## Future Improvements
 
-- Add uploaded screenshots and a demo GIF to the README
 - Add a copied confirmation state after the copy button is clicked
 - Add more tone options, such as impact-focused or leadership-focused
 - Add example inputs to help users start faster
